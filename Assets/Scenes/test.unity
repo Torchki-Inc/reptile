@@ -226,9 +226,8 @@ GameObject:
   - component: {fileID: 629393390}
   - component: {fileID: 629393389}
   - component: {fileID: 629393394}
+  - component: {fileID: 629393395}
   - component: {fileID: 629393393}
-  - component: {fileID: 629393392}
-  - component: {fileID: 629393391}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -304,36 +303,6 @@ Transform:
   - {fileID: 1465039124}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &629393391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629393388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c378f1cc11a991f4b89e3ed720100bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rb: {fileID: 629393394}
-  weapon: {fileID: 1465039123}
---- !u!114 &629393392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629393388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c378f1cc11a991f4b89e3ed720100bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rb: {fileID: 0}
-  weapon: {fileID: 0}
 --- !u!61 &629393393
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -406,6 +375,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &629393395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629393388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c378f1cc11a991f4b89e3ed720100bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rb: {fileID: 629393394}
+  weapon: {fileID: 1465039123}
 --- !u!1 &829063269
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8069019095470585352, guid: 4ed874ea2f431574a87aac706e2a236e, type: 3}
   firePoint: {fileID: 1443362025}
-  fireForce: 20
+  fireForce: 1
 --- !u!4 &1465039124
 Transform:
   m_ObjectHideFlags: 0
@@ -719,6 +703,10 @@ PrefabInstance:
     - target: {fileID: 8069019095470585352, guid: 4ed874ea2f431574a87aac706e2a236e, type: 3}
       propertyPath: m_Name
       value: bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069019095470585352, guid: 4ed874ea2f431574a87aac706e2a236e, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
