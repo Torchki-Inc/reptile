@@ -7,9 +7,17 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Weapon weapon;
+    public Sprite[] sectorSprites; 
+    private SpriteRenderer playerSpriteRenderer;
+
 
     Vector2 moveDirection;
     Vector2 mousePosition;
+
+    void Start()
+    {
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,14 +31,17 @@ public class PlayerController : MonoBehaviour
 
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = mousePosition - (Vector2)transform.position;
+        float angle = Vector2.SignedAngle(Vector2.up, direction);
+        int sector = Mathf.FloorToInt((angle + 22.5f) / 45f) % 8;
+        sector = (sector + 8) % 8;
+        playerSpriteRenderer.sprite = sectorSprites[sector];
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
 
-        Vector2 aimDirection = mousePosition - rb.position;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = aimAngle;
+        
     }
 }
