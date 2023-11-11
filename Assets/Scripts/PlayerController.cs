@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     public Sprite[] sectorSprites; 
     private SpriteRenderer playerSpriteRenderer;
 
+    private float time;
 
+    [SerializeField] public float fireRate = 0.5f;
     Vector2 moveDirection;
     Vector2 mousePosition;
 
@@ -25,8 +27,13 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetMouseButtonDown(0)){
-            weapon.Fire();
+        if ((time += Time.deltaTime) > fireRate)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                time = 0.0f;
+                weapon.Fire();
+            }   
         }
 
         moveDirection = new Vector2(moveX, moveY).normalized;
