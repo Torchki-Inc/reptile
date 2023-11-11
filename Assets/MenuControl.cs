@@ -16,4 +16,11 @@ public class MenuControl : MonoBehaviour
         Debug.Log("boop_end_game");
         Application.Quit();
     }
+
+    //Загрузка для меню паузы
+
+    public void ExitMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
