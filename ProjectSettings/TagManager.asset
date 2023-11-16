@@ -3,18 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - Bruf
-  - Wall
-  - Background
+  - Enemies
+  - PlayerBullets
+  - EnemyBullets
+  - Walls
   - 
   - 
   - 
@@ -40,4 +42,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Bullets
+    uniqueID: 3640345117
+    locked: 0
+  - name: Entities
+    uniqueID: 3728259831
     locked: 0
