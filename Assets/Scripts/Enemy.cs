@@ -1,32 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
     public float moveSpeed = 2f;
-    private float stoppingDistance = 2f;
     public EnemyWeapon weapon;
     private float time;
 
+    private Seeker seeker;
+    private Transform player;
+    private Path path;
+    private int currentWaypoint = 0;
+    public float nextWaypointDistance = 3f;
+
+    void Start()
+    {
+        seeker = GetComponent<Seeker>();
+        player = GameObject.Find("Player").transform;
+
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
+    }
+
+    void UpdatePath()
+    {
+        if (seeker.IsDone())
+        {
+            seeker.StartPath(transform.position, player.position, OnPathComplete);
+        }
+    }
+
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currentWaypoint = 0;
+        }
+    }
+
     void Update()
     {
-        GameObject player = GameObject.Find("Player");
+        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        dir *= moveSpeed * Time.deltaTime;
 
-        float distance = Vector2.Distance(player.transform.position, transform.position);
-        Vector2 direction = player.transform.position - transform.position;
+        transform.Translate(dir);
 
-        if (distance > stoppingDistance)
+        if (Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
         {
-            transform.Translate(direction.normalized * moveSpeed * Time.deltaTime);
-        }
-        else if (distance < stoppingDistance)
-        {
-            transform.Translate(-direction.normalized * moveSpeed * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(Vector3.zero);
+            currentWaypoint++;
         }
 
         if ((time += Time.deltaTime) > weapon.fireRate)
