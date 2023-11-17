@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7018935580826630794}
   - component: {fileID: 8864752724307324656}
   m_Layer: 0
-  m_Name: Path
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d976a2050ea75a745a4f19edecdac300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestinationSceneName: 
+  DestinationScene: Assets/Scenes/Level1/Level1_test2.unity
 --- !u!61 &8864752724307324656
 BoxCollider2D:
   m_ObjectHideFlags: 0
