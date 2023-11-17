@@ -7,9 +7,11 @@ public class Weapon : MonoBehaviour
 {
 
     [SerializeField]public float lifetime = 10f;
+    [SerializeField] public float fireRate = 0.5f;
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float fireForce = 20f;
+    
     
 
     public void Fire()

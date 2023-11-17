@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Path : MonoBehaviour
+public class Door: MonoBehaviour
 {
     public string DestinationScene;
     void OnTriggerEnter2D (Collider2D other)
