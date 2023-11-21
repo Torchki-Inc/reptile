@@ -1,18 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System; 
+using System.IO; 
+using System.Text;
+
+public class PlayerData{
+    public int hp;
+    public float moveSpeed;
+    public Items items;
+    public float fireRate;
+    public int balance;
+    public int damage;
+}
+
+public class Items
+{
+    public List<string> positive;
+    public List<string> negative;
+}
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    //public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Weapon weapon;
     public Sprite[] sectorSprites; 
     private SpriteRenderer playerSpriteRenderer;
-
     private float time;
-
     
+    static string jsonData = "{\"hp\":4,\"items\":{\"positive\":[],\"negative\":[]},\"moveSpeed\":5,\"fireRate\":1,\"balance\":0,\"damage\":1}";
+
+    public PlayerData player = JsonUtility.FromJson<PlayerData>(jsonData);
     Vector2 moveDirection;
     Vector2 mousePosition;
 
@@ -21,7 +40,6 @@ public class PlayerController : MonoBehaviour
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
@@ -49,6 +67,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        rb.velocity = new Vector2(moveDirection.x * player.moveSpeed, moveDirection.y * player.moveSpeed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.tag == "Bullet"){
+            player.hp-=1;
+        }
     }
 }

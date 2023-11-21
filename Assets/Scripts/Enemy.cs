@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 2f;
     public EnemyWeapon weapon;
     private float time;
+    public int hp = 4;
 
     private Seeker seeker;
     private Transform player;
@@ -54,6 +55,12 @@ public class Enemy : MonoBehaviour
         {
             time = 0.0f;
             weapon.Fire();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.tag == "Bullet"){
+            hp-=1;
         }
     }
 }
