@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3943736c1322dc0469a31526d8919935
+guid: c8f9498a0b972a24f8a0192824fbf83e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Lizard_forward
+  - name: MainMenuButtons
     originalName: 
-    pivot: {x: 0.5714286, y: -0.25}
+    pivot: {x: 0.5095786, y: -0.17647061}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 14
-      height: 20
-    spriteID: 420344a617c960a4eb205247be770c77
+      width: 261
+      height: 221
+    spriteID: 84dd2dbb7bf8f304f9b1ed1a8247b8ad
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,23 +142,23 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -467357028
-    name: Lizard_forward
+    guid: 762799421
+    name: MainMenuButtons
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Lizard_forward
+    - name: MainMenuButtons
       frameIndex: 0
       cellRect:
-        x: 8
-        y: 5
-        width: 14
-        height: 20
-      spriteId: 420344a617c960a4eb205247be770c77
+        x: 20
+        y: 39
+        width: 261
+        height: 221
+      spriteId: 84dd2dbb7bf8f304f9b1ed1a8247b8ad
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
+  canvasSize: {x: 306, y: 306}

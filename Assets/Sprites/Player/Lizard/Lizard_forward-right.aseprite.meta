@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f908e238dffceb40a3be1d6855f914a
+guid: fc66f7a5bc612df49b8ac058dc67192a
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Lizard_forward-left
+  - name: Lizard_forward-right
     originalName: 
-    pivot: {x: 0.5, y: -0.25}
+    pivot: {x: 0.47058824, y: -0.25}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 16
+      width: 17
       height: 20
-    spriteID: 7d9f42b9c17cbdd4ebd3fbb25a9cf3c1
+    spriteID: d3a5ada50a951b3468a797b2cec8cc8f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,20 +142,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -999781382
-    name: Lizard_forward-left
+    guid: -755348687
+    name: Lizard_forward-right
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Lizard_forward-left
+    - name: Lizard_forward-right
       frameIndex: 0
       cellRect:
         x: 8
         y: 5
-        width: 16
+        width: 17
         height: 20
-      spriteId: 7d9f42b9c17cbdd4ebd3fbb25a9cf3c1
+      spriteId: d3a5ada50a951b3468a797b2cec8cc8f
     linkedCells: []
     parentIndex: -1
   platformSettings: []
