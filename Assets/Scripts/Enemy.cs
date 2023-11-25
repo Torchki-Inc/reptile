@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public EnemyWeapon weapon;
     private float time;
     public int hp = 4;
+    public GameObject prefabToSpawn;
 
     private Seeker seeker;
     private Transform player;
@@ -61,6 +62,10 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "Bullet"){
             hp-=1;
+            if(hp==0){
+                GameObject spawnedObject = Instantiate (prefabToSpawn, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
         }
     }
 }
