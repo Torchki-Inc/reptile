@@ -41,21 +41,24 @@ public class Enemy : MonoBehaviour
     }
 
     void Update()
-    {
-        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-        dir *= moveSpeed * Time.deltaTime;
+    {   
+        try{
+            Vector2 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+            dir *= moveSpeed * Time.deltaTime;
 
-        transform.Translate(dir);
+            transform.Translate(dir);
 
-        if (Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
-        {
-            currentWaypoint++;
+            if (Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
         }
-
-        if ((time += Time.deltaTime) > weapon.fireRate)
-        {
-            time = 0.0f;
-            weapon.Fire();
+        finally {
+            if ((time += Time.deltaTime) > weapon.fireRate)
+            {
+                time = 0.0f;
+                weapon.Fire();
+            }
         }
     }
 

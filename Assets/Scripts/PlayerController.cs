@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer playerSpriteRenderer;
     private float time;
     
-    static string jsonData = "{\"hp\":4,\"items\":{\"positive\":[],\"negative\":[]},\"moveSpeed\":5,\"fireRate\":1,\"balance\":0,\"damage\":1}";
+    static string jsonData = "{\"hp\":4,\"items\":{\"positive\":[],\"negative\":[]},\"moveSpeed\":5,\"fireRate\":10,\"balance\":0,\"damage\":1}";
 
     public PlayerData player = JsonUtility.FromJson<PlayerData>(jsonData);
     Vector2 moveDirection;

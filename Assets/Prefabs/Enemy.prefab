@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 2
   fireRate: 2.5
-  bulletPrefab: {fileID: 8069019095470585352, guid: 4ed874ea2f431574a87aac706e2a236e, type: 3}
+  bulletPrefab: {fileID: 8069019095470585352, guid: 227f0aa304403ee43909f381ebf5cb3f, type: 3}
   firePoint: {fileID: 1286984207975054405}
   fireForce: 25
 --- !u!1 &8669160314959431964
@@ -244,6 +244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   weapon: {fileID: 7994456907626361397}
+  hp: 4
+  prefabToSpawn: {fileID: 1225946625211031180, guid: 087a2cd34ea3b9042b7cd6b0d5ebe385, type: 3}
   nextWaypointDistance: 1
 --- !u!114 &1676961220280177875
 MonoBehaviour:
