@@ -9,12 +9,11 @@ public class EnemyWeapon : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float fireForce = 20f;
+    public PlayerController player;
 
     public void Fire()
     {
-        GameObject player = GameObject.FindWithTag("Player");
-
-        Vector2 playerPosition = player.transform.position;
+        Vector2 playerPosition = player.weapon.transform.position;
 
         Vector2 shootDirection = (playerPosition - (Vector2)firePoint.position).normalized;
 

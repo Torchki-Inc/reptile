@@ -1,8 +1,0 @@
-{
-    "hp" : 4,
-    "items" : { "positive" : [], "negative" : [] },
-    "moveSpeed" : 5,
-    "fireRate" : 1,
-    "balance" : 0,
-    "damage" : 1
-}

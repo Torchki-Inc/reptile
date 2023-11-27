@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class NewGameButton : MonoBehaviour
+public class StartButton : MonoBehaviour
 {
     void Start()
     {
@@ -17,6 +18,7 @@ public class NewGameButton : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene ("Assets/Scenes/Hub.unity");
+        SceneManager.LoadScene ("Assets/Scenes/Level1/1_1.unity");
+        File.Copy("Assets/DataSheets/LizardPlayerData.txt", "Assets/DataSheets/LizardPlayerDataX.txt", true);
     }
 }

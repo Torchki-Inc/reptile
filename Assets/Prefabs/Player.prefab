@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8047541423004260546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.018, y: 0.132, z: 0}
+  m_LocalPosition: {x: -0.0096, y: 0.1567, z: 0}
   m_LocalScale: {x: 0.026581423, y: 0.057434816, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 10
-  bulletPrefab: {fileID: 8069019095470585352, guid: 4ed874ea2f431574a87aac706e2a236e, type: 3}
+  fireRate: 0.1
+  bulletPrefab: {fileID: 8069019095470585352, guid: 356027e2afce55c43b2874af404ebde1, type: 3}
   firePoint: {fileID: 8967844087191565038}
   fireForce: 1
 --- !u!1 &8225703310564054286
@@ -229,7 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c378f1cc11a991f4b89e3ed720100bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   rb: {fileID: 2739972951570916307}
   weapon: {fileID: 6444578665374700085}
   sectorSprites:
@@ -241,7 +241,6 @@ MonoBehaviour:
   - {fileID: -3384692096481015518, guid: fb7114a9a9e99de4b95928c782eb52e0, type: 3}
   - {fileID: -8617942403266633326, guid: e70ed517f5c442b4388ac1813586b3a9, type: 3}
   - {fileID: 4936752345949381591, guid: fc66f7a5bc612df49b8ac058dc67192a, type: 3}
-  fireRate: 0.5
 --- !u!61 &2924155775078334549
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -277,8 +276,8 @@ BoxCollider2D:
   m_Offset: {x: -0.009999998, y: 0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5714286, y: -0.25}
-    oldSize: {x: 0.14, y: 0.2}
+    pivot: {x: 0.5, y: -0.25}
+    oldSize: {x: 0.16, y: 0.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

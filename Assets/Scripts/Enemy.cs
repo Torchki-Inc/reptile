@@ -8,12 +8,14 @@ public class Enemy : MonoBehaviour
     private float time;
     public int hp = 4;
     public GameObject prefabToSpawn;
+    public PlayerController dick;
 
     private Seeker seeker;
     private Transform player;
     private Path path;
     private int currentWaypoint = 0;
     public float nextWaypointDistance = 3f;
+    
 
     void Start()
     {
@@ -42,26 +44,30 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-        dir *= moveSpeed * Time.deltaTime;
+        try{
+                Vector2 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+            dir *= moveSpeed * Time.deltaTime;
 
-        transform.Translate(dir);
+            transform.Translate(dir);
 
-        if (Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
-        {
-            currentWaypoint++;
+            if (Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
         }
 
-        if ((time += Time.deltaTime) > weapon.fireRate)
-        {
-            time = 0.0f;
-            weapon.Fire();
+        finally {
+            if ((time += Time.deltaTime) > weapon.fireRate)
+            {
+                time = 0.0f;
+                weapon.Fire();
+            }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "Bullet"){
-            hp-=1;
+            hp-=dick.player.damage;
             if(hp==0){
                 GameObject spawnedObject = Instantiate (prefabToSpawn, transform.position, Quaternion.identity);
                 Destroy(gameObject);

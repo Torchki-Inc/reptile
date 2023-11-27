@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8f9498a0b972a24f8a0192824fbf83e
+guid: c0702972aec7733409e7c864b2281d27
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,9 +119,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: MainMenuButtons
+  - name: Start
     originalName: 
-    pivot: {x: 0.5095786, y: -0.17647061}
+    pivot: {x: 0.50766283, y: -0.36065573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -129,8 +129,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 261
-      height: 221
-    spriteID: 84dd2dbb7bf8f304f9b1ed1a8247b8ad
+      height: 61
+    spriteID: 0ff7cd28ab1557c4789c1d4d153c5b62
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,23 +142,23 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 762799421
-    name: MainMenuButtons
+    guid: 1055560650
+    name: Start
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: MainMenuButtons
+    - name: Start
       frameIndex: 0
       cellRect:
-        x: 20
-        y: 39
+        x: 4
+        y: 22
         width: 261
-        height: 221
-      spriteId: 84dd2dbb7bf8f304f9b1ed1a8247b8ad
+        height: 61
+      spriteId: 0ff7cd28ab1557c4789c1d4d153c5b62
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 306, y: 306}
+  canvasSize: {x: 273, y: 114}

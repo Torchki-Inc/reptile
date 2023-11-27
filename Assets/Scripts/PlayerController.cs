@@ -4,20 +4,30 @@ using UnityEngine;
 using System; 
 using System.IO; 
 using System.Text;
+using System.Runtime.CompilerServices;
 
 public class PlayerData{
     public int hp;
     public float moveSpeed;
-    public Items items;
+    public List<Item> items;
     public float fireRate;
     public int balance;
     public int damage;
+    public string race;
+    
 }
 
-public class Items
+public class Item
 {
-    public List<string> positive;
-    public List<string> negative;
+    public string name{ get; set; }
+    public int val{ get; set; }
+    public Action effect{ get; set; }
+
+    public Item(string Name, int Val, Action Effect){
+        name = Name;
+        val = Val;
+        effect = Effect;
+    }
 }
 
 public class PlayerController : MonoBehaviour
@@ -28,16 +38,24 @@ public class PlayerController : MonoBehaviour
     public Sprite[] sectorSprites; 
     private SpriteRenderer playerSpriteRenderer;
     private float time;
-    
-    static string jsonData = "{\"hp\":4,\"items\":{\"positive\":[],\"negative\":[]},\"moveSpeed\":5,\"fireRate\":1,\"balance\":0,\"damage\":1}";
 
-    public PlayerData player = JsonUtility.FromJson<PlayerData>(jsonData);
     Vector2 moveDirection;
     Vector2 mousePosition;
+
+    public PlayerData player;
 
     void Start()
     {
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        using(StreamReader reader = new StreamReader("Assets/DataSheets/LizardPlayerDataX.txt")){
+            player.hp = Int32.Parse(reader.ReadLine());
+            player.moveSpeed = Int32.Parse(reader.ReadLine());
+            player.fireRate = float.Parse(reader.ReadLine());
+            player.balance = Int32.Parse(reader.ReadLine());
+            player.damage = Int32.Parse(reader.ReadLine());
+            player.race = reader.ReadLine();
+
+        }
     }
 
     void Update()
@@ -45,7 +63,7 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        if ((time += Time.deltaTime) > weapon.fireRate)
+        if ((time += Time.deltaTime) > player.fireRate)
         {
             if (Input.GetMouseButton(0))
             {

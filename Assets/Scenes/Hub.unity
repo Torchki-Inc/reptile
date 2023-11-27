@@ -226,8 +226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -595.57, y: -332.56}
-  m_SizeDelta: {x: 3.92, y: 4.2446}
+  m_AnchoredPosition: {x: 197, y: -8}
+  m_SizeDelta: {x: 146.26, y: 171.49}
   m_Pivot: {x: 0.5756056, y: 0.49999997}
 --- !u!114 &546080710
 MonoBehaviour:
@@ -2671,7 +2671,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 2041139266}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2682,7 +2682,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_TargetDisplay: 0
 --- !u!224 &1553345602
 RectTransform:
@@ -2722,11 +2722,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8071840264563333991, guid: 1dcfbf0b420fbe449bfd52f07d9851e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2675
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: 8071840264563333991, guid: 1dcfbf0b420fbe449bfd52f07d9851e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7164
+      value: -1.85
       objectReference: {fileID: 0}
     - target: {fileID: 8071840264563333991, guid: 1dcfbf0b420fbe449bfd52f07d9851e5, type: 3}
       propertyPath: m_LocalPosition.z
